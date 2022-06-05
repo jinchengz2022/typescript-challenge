@@ -1,0 +1,1 @@
+type Concat1<T extends any[], U extends any[]> = [...T, ...U];

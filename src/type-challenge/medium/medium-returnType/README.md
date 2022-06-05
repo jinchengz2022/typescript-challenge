@@ -1,0 +1,1 @@
+不使用 ReturnType 实现 TypeScript 的 ReturnType<T> 泛型。

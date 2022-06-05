@@ -1,0 +1,1 @@
+type LookUp<U, T extends unknown> = U extends (T extends U[keyof U] ? U : never) ? U : never;
