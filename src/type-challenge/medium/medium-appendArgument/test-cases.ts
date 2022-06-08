@@ -1,5 +1,7 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
+// type AppendArgument<T extends (...args: any[]) => any, U> = T extends (...args: infer K) => infer R ? (...args: [...K, U]) => R : T;
+
 type Case1 = AppendArgument<(a: number, b: string) => number, boolean>
 type Result1 = (a: number, b: string, x: boolean) => number
 

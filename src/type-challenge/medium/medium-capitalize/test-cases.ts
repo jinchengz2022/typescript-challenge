@@ -1,5 +1,7 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
+// type MyCapitalize<T extends string> = T extends '' ? '' : T extends `${infer F}${infer L}` ? F extends keyof upEn ? `${upEn[F]}${L}` : `${F}${L}` : never;
+
 type cases = [
   Expect<Equal<MyCapitalize<'foobar'>, 'Foobar'>>,
   Expect<Equal<MyCapitalize<'FOOBAR'>, 'FOOBAR'>>,

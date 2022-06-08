@@ -1,5 +1,10 @@
 import type { Alike, Expect } from '@type-challenges/utils'
 
+type Chainable<T = {}> = {
+  option<K extends string, V extends unknown>(key: K extends keyof T ? never : K, value: V): Chainable<{[P in K]: V} & T>;
+  get(): T;
+}
+
 declare const a: Chainable
 
 const result1 = a
@@ -7,9 +12,7 @@ const result1 = a
   .option('bar', { value: 'Hello World' })
   .option('name', 'type-challenges')
   .get();
-  
 
-  type result11 = typeof result1;
 
 const result2 = a
   .option('name', 'another name')

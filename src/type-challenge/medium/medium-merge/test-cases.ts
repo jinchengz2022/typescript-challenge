@@ -1,4 +1,8 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils';
+
+// type Merge<T, U> = {
+//   [K in keyof T | keyof U]: K extends keyof U ? U[K] : K extends keyof T ? T[K] : never;
+// }
 
 type Foo = {
   a: number
