@@ -1,6 +1,12 @@
 
    
-import type { Alike, Expect } from '@type-challenges/utils'
+import type { Alike, Expect } from '@type-challenges/utils';
+
+// type MyReadonly2<T, K extends keyof T = keyof T> = {
+//   readonly [P in K]: T[P];
+// } & {
+//   [U in Exclude<keyof T, K>]: T[U]
+// }
 
 type cases = [
   Expect<Alike<MyReadonly2<Todo1>, Readonly<Todo1>>>,

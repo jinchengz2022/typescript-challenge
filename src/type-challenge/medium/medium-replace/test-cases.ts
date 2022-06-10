@@ -1,4 +1,7 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils';
+
+// type Replace<T extends string, A extends string, B extends string> = 
+// A extends "" ? T : T extends `${infer F}${A}${infer L}` ? `${F}${B}${L}` : T
 
 type cases = [
   Expect<Equal<Replace<'foobar', 'bar', 'foo'>, 'foofoo'>>,
