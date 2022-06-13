@@ -1,4 +1,6 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils';
+
+// type StringToUnion<T extends string> = T extends "" ? never : T extends `${infer F}${infer R}` ? F | StringToUnion<R> : never;
 
 type cases = [
   Expect<Equal<StringToUnion<''>, never>>,

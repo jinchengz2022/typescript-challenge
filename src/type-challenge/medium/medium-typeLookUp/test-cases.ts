@@ -15,8 +15,6 @@ interface Dog {
 
 type Animal = Cat | Dog;
 
-type bbb<T, U> = U extends T[keyof T] ? T : never;
-type aaa = Animal extends bbb<Animal, 'dog'> ? Animal : never;
 
 type cases = [
   Expect<Equal<LookUp<Animal, 'dog'>, Dog>>,
