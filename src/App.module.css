@@ -1,0 +1,24 @@
+.block {
+  width: 200px;
+  height: 200px;
+  background-color: brown;
+  
+}
+
+.a {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.a dialog {
+  left: 0;
+  right: 0;
+  /* margin: auto; */
+  margin-inline: auto;
+  margin-block: auto;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+}

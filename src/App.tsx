@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const dataArr = ['RISK', 'CAMP', 'DUP'];
+
+  const idRequest = async (id: number): Promise<number> => {
+    await Promise.resolve('');
+    return id;
+  }
+
+  const lastRequest = <T, R extends number>(request: (...args: T[]) => Promise<R>): (...args: T[]) => Promise<R> => {
+    let time = 0;
+    const innerRequest = async (...args: T[]): Promise<R> => {
+      time++;
+      const id = await request(...args);
+      if(id !== time) {
+        await new Promise(() => {});
+      }
+      return request(...args);
+    }
+    return innerRequest;
+  }
+  
+  const request = lastRequest(idRequest);
+
+  request(1).then(console.log);
+  request(2).then(console.log);
+  request(3).then(console.log);
+  request(4).then(() => setTimeout(() => {
+    console.log(4)
+  }, 2000));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div></div>
   );
-}
+};
 
 export default App;
