@@ -13,3 +13,5 @@ type cases = [
 ]
 
 type MyLength<T extends readonly any[]> = T['length'];
+
+// type MyLength1<T extends any> = T extends { length: infer L } ? L : never;
